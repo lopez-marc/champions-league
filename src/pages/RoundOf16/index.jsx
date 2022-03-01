@@ -32,7 +32,8 @@ export default function RoundOf16 () {
                     className={
                       selectedTeam.name === element.team.name
                         ? 'team active'
-                        : element.group !== selectedTeam.group &&
+                        : selectedTeam.name !== undefined &&
+                          element.group !== selectedTeam.group &&
                           element.team.country !== selectedTeam.country &&
                           selectedList !== 'group-winners'
                         ? 'team against'
@@ -64,7 +65,8 @@ export default function RoundOf16 () {
                     className={
                       selectedTeam.name === element.team.name
                         ? 'team active'
-                        : element.group !== selectedTeam.group &&
+                        : selectedTeam.name !== undefined &&
+                          element.group !== selectedTeam.group &&
                           element.team.country !== selectedTeam.country &&
                           selectedList !== 'group-runners-up'
                         ? 'team against'
