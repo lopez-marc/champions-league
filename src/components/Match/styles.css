@@ -1,0 +1,130 @@
+.crest {
+  width: 20px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+#groupStageMatches form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eeeeee;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#groupStageMatches form input {
+  width: 20px;
+}
+
+#groupStageMatches .match {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+}
+
+#groupStageMatches .match .away {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+#groupStageMatches .match .home {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+[data-status='FT'] input[type='number'] {
+  background-color: pink;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: #eeeeee;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  /* Test */
+  /* all: unset; */
+  padding: 0.5em;
+  position: relative;
+  text-align: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+
+  transition: 0.1s;
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+  /* all: unset; */
+  -moz-appearance: textfield;
+  outline: black;
+  /* border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; */
+
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+  width: 40px;
+}
+
+.fontAwesomeIcon {
+  color: black;
+  margin: 0.5em;
+}
+
+#groupStageMatches .hiddenButtons {
+  display: none;
+  opacity: 0;
+  transition: all 10s linear;
+}
+
+#groupStageMatches .buttons {
+  background-color: white;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0 0;
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+}
+#groupStageMatches .buttons span {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+#groupStageMatches .buttons span:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #eeeeee;
+}
+
+#groupStageMatches .match .dash {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

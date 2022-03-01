@@ -1,0 +1,13 @@
+#signin_form {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+#siginin_form button {
+  align-self: flex-end;
+}

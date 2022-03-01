@@ -1,0 +1,66 @@
+.standing table {
+  display: grid;
+  border-collapse: collapse;
+  grid-template-columns:
+    minmax(150px, 3fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr)
+    minmax(50px, 1fr);
+  margin: 0 0.5em;
+  padding: 0.5em;
+  background-color: #eeeeee;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+th:last-child {
+  border: 0;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* tr:nth-child(even) td {
+  background: #f8f6ff;
+} */
+
+.standing h3 {
+  display: flex;
+  justify-content: center;
+  background-color: #398ab9;
+  color: #d8d2cb;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

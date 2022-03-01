@@ -1,0 +1,7 @@
+.team-name {
+  display: flex;
+  align-items: center;
+}
+.team-name .crest {
+  margin: 0 0.5em;
+}

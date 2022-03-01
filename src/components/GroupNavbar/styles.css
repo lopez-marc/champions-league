@@ -1,0 +1,13 @@
+#groupNavigation {
+  display: none;
+  padding: 0.2em;
+  /* display: flex; */
+}
+#groupNavigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+#groupNavigation nav {
+  width: 100%;
+}
