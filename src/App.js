@@ -13,7 +13,7 @@ import RoundOf16 from './pages/RoundOf16'
 
 function App () {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/champions-league'>
       <UserContextProvider>
         <DataContextProvider>
           <Navbar />
