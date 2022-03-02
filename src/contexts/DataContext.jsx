@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from 'react'
 import getFixtures from '../services/getFixtures.jsx'
 import getStandings from '../services/getStandings.jsx'
+import getFinalStage from '../services/getFinalStage.jsx'
 import getDefaultFixtures from '../services/getDefaultFixtures.jsx'
 import getDefaultStandings from '../services/getDefaultStandings.jsx'
 import getDefaultFinalStage from '../services/getDefaultFinalStage.jsx'
@@ -29,6 +30,7 @@ export function DataContextProvider ({ children }) {
     if (token) {
       getFixtures(token).then(setFixtures)
       getStandings(token).then(setStandings)
+      getFinalStage(token).then(setFinalStage)
     } else {
       getDefaultFixtures().then(setFixtures)
       getDefaultStandings().then(setStandings)

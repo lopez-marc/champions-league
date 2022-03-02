@@ -92,55 +92,56 @@ export default function RoundOf16 () {
       </div>
       <h3>Fixtures</h3>
       <div id='group-of-16-fixtures'>
-        {finalStageTwoLegs.map(element => {
-          return (
-            <table>
-              <thead>
+        {finalStageTwoLegs &&
+          finalStageTwoLegs.map(element => {
+            return (
+              <table>
+                <thead>
+                  <tr>
+                    <th class='table_team-name'></th>
+                    <th class='table_team-first-leg'>
+                      <span class='label--big'>
+                        {element.firstLeg.day.slice(0, -5)}
+                      </span>
+                    </th>
+                    <th class='table_team-second-leg'>
+                      <span class='label--big'>
+                        {element.secondLeg.day.slice(0, -5)}
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
                 <tr>
-                  <th class='table_team-name'></th>
-                  <th class='table_team-first-leg'>
-                    <span class='label--big'>
-                      {element.firstLeg.day.slice(0, -5)}
+                  <td className='team-name'>
+                    <span>
+                      <img
+                        src={`https://media.api-sports.io/football/teams/${element.firstLeg.teams.home.id}.png`}
+                        alt={element.firstLeg.teams.home.name}
+                        className='crest'
+                      />
+                      {element.firstLeg.teams.home.name}
                     </span>
-                  </th>
-                  <th class='table_team-second-leg'>
-                    <span class='label--big'>
-                      {element.secondLeg.day.slice(0, -5)}
-                    </span>
-                  </th>
+                  </td>
+                  <td>{element.firstLeg.goals.home}</td>
+                  <td>{element.secondLeg.goals.away}</td>
                 </tr>
-              </thead>
-              <tr>
-                <td className='team-name'>
-                  <span>
-                    <img
-                      src={`https://media.api-sports.io/football/teams/${element.firstLeg.teams.home.id}.png`}
-                      alt={element.firstLeg.teams.home.name}
-                      className='crest'
-                    />
-                    {element.firstLeg.teams.home.name}
-                  </span>
-                </td>
-                <td>{element.firstLeg.goals.home}</td>
-                <td>{element.secondLeg.goals.away}</td>
-              </tr>
-              <tr>
-                <td className='team-name'>
-                  <span>
-                    <img
-                      src={`https://media.api-sports.io/football/teams/${element.firstLeg.teams.away.id}.png`}
-                      alt={element.firstLeg.teams.away.name}
-                      className='crest'
-                    />
-                    {element.firstLeg.teams.away.name}
-                  </span>
-                </td>
-                <td>{element.firstLeg.goals.away}</td>
-                <td>{element.secondLeg.goals.home}</td>
-              </tr>
-            </table>
-          )
-        })}
+                <tr>
+                  <td className='team-name'>
+                    <span>
+                      <img
+                        src={`https://media.api-sports.io/football/teams/${element.firstLeg.teams.away.id}.png`}
+                        alt={element.firstLeg.teams.away.name}
+                        className='crest'
+                      />
+                      {element.firstLeg.teams.away.name}
+                    </span>
+                  </td>
+                  <td>{element.firstLeg.goals.away}</td>
+                  <td>{element.secondLeg.goals.home}</td>
+                </tr>
+              </table>
+            )
+          })}
       </div>
     </div>
   )
