@@ -94,20 +94,19 @@ export default function RoundOf16 () {
       <div id='group-of-16-fixtures'>
         {finalStageTwoLegs &&
           finalStageTwoLegs.map(element => {
+            const firstLegDay = element.firstLeg.day.slice(0, -5)
+            const secondLegDay = element.secondLeg.day.slice(0, -5)
+
             return (
               <table>
                 <thead>
                   <tr>
                     <th class='table_team-name'></th>
                     <th class='table_team-first-leg'>
-                      <span class='label--big'>
-                        {element && element.firstLeg.day.slice(0, -5)}
-                      </span>
+                      <span class='label--big'>{firstLegDay}</span>
                     </th>
                     <th class='table_team-second-leg'>
-                      <span class='label--big'>
-                        {element && element.secondLeg.day.slice(0, -5)}
-                      </span>
+                      <span class='label--big'>{secondLegDay}</span>
                     </th>
                   </tr>
                 </thead>
