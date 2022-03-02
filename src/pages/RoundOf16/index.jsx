@@ -101,12 +101,12 @@ export default function RoundOf16 () {
                     <th class='table_team-name'></th>
                     <th class='table_team-first-leg'>
                       <span class='label--big'>
-                        {element.firstLeg.day.slice(0, -5)}
+                        {element && element.firstLeg.day.slice(0, -5)}
                       </span>
                     </th>
                     <th class='table_team-second-leg'>
                       <span class='label--big'>
-                        {element.secondLeg.day.slice(0, -5)}
+                        {element && element.secondLeg.day.slice(0, -5)}
                       </span>
                     </th>
                   </tr>
