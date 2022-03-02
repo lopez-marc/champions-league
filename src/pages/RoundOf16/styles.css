@@ -38,13 +38,59 @@
   border-radius: 0.5em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+#group-of-16 {
+  padding: 1em;
+}
 #group-of-16-combinations {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1em;
   grid-gap: 50px;
+  margin: 2em 0;
 }
 #group-of-16-combinations .team-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+#group-of-16-fixtures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1em;
+}
+#group-of-16-fixtures table {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#group-of-16-fixtures .team-name {
+  border-radius: 0.5em;
+  background-color: #eeeeee;
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+  padding: 0.5em;
+}
+
+#group-of-16-fixtures td {
+  border-radius: 0.5em;
+  background-color: #eeeeee;
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+  margin: 0.5em;
+}
+#group-of-16-fixtures thead span {
+  background-color: #398ab9;
+  color: #d8d2cb;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+#group-of-16-fixtures th {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* background-color: #eeeeee; */
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }

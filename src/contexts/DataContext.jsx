@@ -3,6 +3,8 @@ import getFixtures from '../services/getFixtures.jsx'
 import getStandings from '../services/getStandings.jsx'
 import getDefaultFixtures from '../services/getDefaultFixtures.jsx'
 import getDefaultStandings from '../services/getDefaultStandings.jsx'
+import getDefaultFinalStage from '../services/getDefaultFinalStage.jsx'
+
 import { useUserContext } from './UserContext.jsx'
 
 export const DataContext = createContext({})
@@ -14,6 +16,9 @@ export const useDataContext = () => {
 export function DataContextProvider ({ children }) {
   const [fixtures, setFixtures] = useState()
   const [standings, setStandings] = useState()
+  const [finalStage, setFinalStage] = useState()
+  const [finalStageTwoLegs, setFinalStageTwoLegs] = useState()
+
   const [matchDay, setMatchDay] = useState(1)
   const [groupWinners, setGroupWinners] = useState()
   const [groupRunnersUp, setGroupRunnersUp] = useState()
@@ -27,6 +32,7 @@ export function DataContextProvider ({ children }) {
     } else {
       getDefaultFixtures().then(setFixtures)
       getDefaultStandings().then(setStandings)
+      getDefaultFinalStage().then(setFinalStage)
     }
   }, [token])
 
@@ -43,6 +49,32 @@ export function DataContextProvider ({ children }) {
         )
       ]
     : null
+
+  useEffect(() => {
+    if (finalStage) {
+      const finalStageSortedByDate = finalStage.data.sort(
+        (a, b) => a.date > b.date
+      )
+
+      const finalStageFirstHalf = finalStageSortedByDate.slice(
+        0,
+        finalStage.data.length / 2
+      )
+      const finalStageSecondHalf = finalStageSortedByDate.slice(
+        -finalStage.data.length / 2
+      )
+
+      const finalStagReordered = finalStageFirstHalf.map(element => {
+        const secondLegElement = finalStageSecondHalf.find(
+          secondElement =>
+            element.teams.home.name === secondElement.teams.away.name
+        )
+
+        return { firstLeg: element, secondLeg: secondLegElement }
+      })
+      setFinalStageTwoLegs(finalStagReordered)
+    }
+  }, [finalStage])
 
   useEffect(() => {
     if (standings) {
@@ -72,7 +104,8 @@ export function DataContextProvider ({ children }) {
         matchDay,
         setMatchDay,
         groupWinners,
-        groupRunnersUp
+        groupRunnersUp,
+        finalStageTwoLegs
       }}
     >
       {children}
