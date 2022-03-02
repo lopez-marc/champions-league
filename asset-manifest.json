@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/champions-league/static/css/main.7480ca07.css",
-    "main.js": "/champions-league/static/js/main.dadd6520.js",
+    "main.js": "/champions-league/static/js/main.a8be2250.js",
     "static/media/logo.svg": "/champions-league/static/media/logo.8068e792a8e2397a0205b8e28a6729de.svg",
     "index.html": "/champions-league/index.html",
     "main.7480ca07.css.map": "/champions-league/static/css/main.7480ca07.css.map",
-    "main.dadd6520.js.map": "/champions-league/static/js/main.dadd6520.js.map"
+    "main.a8be2250.js.map": "/champions-league/static/js/main.a8be2250.js.map"
   },
   "entrypoints": [
     "static/css/main.7480ca07.css",
-    "static/js/main.dadd6520.js"
+    "static/js/main.a8be2250.js"
   ]
 }
