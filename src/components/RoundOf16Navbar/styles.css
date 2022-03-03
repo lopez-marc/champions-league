@@ -1,0 +1,27 @@
+#roundOf16Navigation {
+  padding: 0.2em;
+  display: flex;
+  background-color: #398ab9;
+}
+#roundOf16Navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+#roundOf16Navigation nav {
+  width: 100%;
+}
+
+#roundOf16Navigation a {
+  text-decoration: none;
+  background-color: white;
+  padding: 0.5em;
+  color: #1c658c;
+  border-radius: 0.5em;
+}
+#roundOf16Navigation a.active {
+  background-color: #1c658c;
+  color: #eee;
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  pointer-events: none;
+}

@@ -1,7 +1,8 @@
 #groupNavigation {
-  display: none;
   padding: 0.2em;
   /* display: flex; */
+  display: none;
+  background-color: #398ab9;
 }
 #groupNavigation ul {
   list-style: none;

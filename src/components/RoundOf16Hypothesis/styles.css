@@ -1,0 +1,25 @@
+#hypotesis-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+#hypotesis-buttons button {
+  background-color: #1c658c;
+  padding: 0.5em;
+  color: white;
+  border-radius: 0.5em;
+  font-size: larger;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+}
+#hypotesis-buttons button:hover {
+  background-color: white;
+  color: #1c658c;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#group-of-16-hypothesis table:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+}

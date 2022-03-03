@@ -17,6 +17,7 @@
 }
 #group-of-16 .active {
   background-color: green;
+  /* pointer-events: none; */
 }
 #group-of-16 .active:hover {
   background-color: green;
@@ -33,7 +34,7 @@
   justify-content: center;
   background-color: #398ab9;
   color: #d8d2cb;
-  margin: 0.5em;
+  margin: 2em 0 0.5em;
   padding: 0.5em;
   border-radius: 0.5em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -45,7 +46,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-  margin: 2em 0;
+}
+#group-of-16-combinations h3 {
+  margin-top: 0.5em;
 }
 #group-of-16-combinations .team-list {
   display: grid;
@@ -93,4 +96,55 @@
   align-items: flex-end;
   /* background-color: #eeeeee; */
   /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+}
+
+#group-of-16 .disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+#group-of-16 .not-against {
+  pointer-events: none;
+}
+
+#group-of-16-hypothesis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 1em;
+}
+#group-of-16-hypothesis table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* #group-of-16-hypothesis .team-name {
+  border-radius: 0.5em;
+  background-color: #eeeeee;
+  padding: 0.5em;
+} */
+
+/* #group-of-16-hypothesis td {
+  border-radius: 0.5em;
+  background-color: #eeeeee;
+  margin: 0.5em;
+} */
+#group-of-16-hypothesis thead span {
+  background-color: #398ab9;
+  color: #d8d2cb;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+#group-of-16-hypothesis th {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hypothesis-home {
+  display: flex;
+  justify-content: flex-end;
 }

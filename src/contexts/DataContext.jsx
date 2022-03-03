@@ -8,6 +8,8 @@ import getDefaultFinalStage from '../services/getDefaultFinalStage.jsx'
 
 import { useUserContext } from './UserContext.jsx'
 
+import { useLocalStorage } from '../hooks/useLocalStorage.jsx'
+
 export const DataContext = createContext({})
 
 export const useDataContext = () => {
@@ -21,8 +23,14 @@ export function DataContextProvider ({ children }) {
   const [finalStageTwoLegs, setFinalStageTwoLegs] = useState()
 
   const [matchDay, setMatchDay] = useState(1)
-  const [groupWinners, setGroupWinners] = useState()
-  const [groupRunnersUp, setGroupRunnersUp] = useState()
+  const [groupWinners, setGroupWinners] = useLocalStorage(
+    'cl-group-winner',
+    null
+  )
+  const [groupRunnersUp, setGroupRunnersUp] = useLocalStorage(
+    'cl-group-runners-up',
+    null
+  )
 
   const { token } = useUserContext()
 
@@ -54,6 +62,7 @@ export function DataContextProvider ({ children }) {
 
   useEffect(() => {
     if (finalStage) {
+      console.log(finalStage)
       const finalStageSortedByDate = finalStage.data.sort(
         (a, b) => a.date > b.date
       )
@@ -84,13 +93,35 @@ export function DataContextProvider ({ children }) {
         .filter(item => item.rank === 1)
         .sort((a, b) => a.group > b.group)
 
-      setGroupWinners(winners)
+      const sameWinners = winners.filter(winner => {
+        groupWinners.map(groupWinner => {
+          if (winner.team.name === groupWinner.team.name) {
+            return true
+          }
+          return false
+        })
+      })
+
+      if (sameWinners.length !== 0) {
+        setGroupWinners(winners)
+      }
 
       const runners = standings.data
         .filter(item => item.rank === 2)
         .sort((a, b) => a.group > b.group)
 
-      setGroupRunnersUp(runners)
+      const sameRunners = runners.filter(runner => {
+        groupRunnersUp.map(groupRunner => {
+          if (runner.team.name === groupRunner.team.name) {
+            return true
+          }
+          return false
+        })
+      })
+
+      if (sameRunners.length !== 0) {
+        setGroupRunnersUp(runners)
+      }
     }
   }, [standings])
 
@@ -107,7 +138,9 @@ export function DataContextProvider ({ children }) {
         setMatchDay,
         groupWinners,
         groupRunnersUp,
-        finalStageTwoLegs
+        finalStageTwoLegs,
+        setGroupWinners,
+        setGroupRunnersUp
       }}
     >
       {children}
