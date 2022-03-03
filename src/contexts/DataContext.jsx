@@ -90,7 +90,7 @@ export function DataContextProvider ({ children }) {
         .filter(item => item.rank === 1)
         .sort((a, b) => a.group > b.group)
 
-      if (groupWinners.length === 0) {
+      if (groupWinners !== null || groupWinners.length === 0) {
         setGroupWinners(winners)
       } else {
         const sameWinners = winners.filter(winner => {
@@ -111,7 +111,7 @@ export function DataContextProvider ({ children }) {
         .filter(item => item.rank === 2)
         .sort((a, b) => a.group > b.group)
 
-      if (groupRunnersUp.length === 0) {
+      if (groupRunnersUp !== null || groupRunnersUp.length === 0) {
         setGroupRunnersUp(runners)
       } else {
         const sameRunners = runners.filter(runner => {
