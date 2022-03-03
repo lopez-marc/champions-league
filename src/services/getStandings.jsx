@@ -1,11 +1,14 @@
 import axios from 'axios'
 
 const getStandings = async token => {
-  const res = await axios.get(`${process.env.APIURL}/standing`, {
-    headers: {
-      Authorization: 'Bearer ' + token
+  const res = await axios.get(
+    `https://champions-league-server.herokuapp.com/standing`,
+    {
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
     }
-  })
+  )
 
   return res.data
 }

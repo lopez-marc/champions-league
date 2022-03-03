@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 const getDefaultStandings = async () => {
-  const res = await axios.get(`${process.env.APIURL}/api-standing`)
+  const res = await axios.get(
+    `https://champions-league-server.herokuapp.com/api-standing`
+  )
 
   return res.data
 }
