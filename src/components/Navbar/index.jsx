@@ -79,7 +79,9 @@ export default function Navbar ({ setRoute, route }) {
           </ul>
         </nav>
       </header>
-      {showPhoneNavbar ? <PhoneNavbar /> : null}
+      {showPhoneNavbar ? (
+        <PhoneNavbar setRoute={setRoute} route={route} />
+      ) : null}
       {showModal ? (
         <Modal>
           {isRegistered ? (
