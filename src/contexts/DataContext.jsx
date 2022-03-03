@@ -23,13 +23,10 @@ export function DataContextProvider ({ children }) {
   const [finalStageTwoLegs, setFinalStageTwoLegs] = useState()
 
   const [matchDay, setMatchDay] = useState(1)
-  const [groupWinners, setGroupWinners] = useLocalStorage(
-    'cl-group-winner',
-    null
-  )
+  const [groupWinners, setGroupWinners] = useLocalStorage('cl-group-winner', [])
   const [groupRunnersUp, setGroupRunnersUp] = useLocalStorage(
     'cl-group-runners-up',
-    null
+    []
   )
 
   const { token } = useUserContext()
