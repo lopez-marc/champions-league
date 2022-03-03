@@ -9,9 +9,8 @@ export default function RoundOf16Fixtures () {
       <div id='group-of-16-fixtures'>
         {finalStageTwoLegs &&
           finalStageTwoLegs.map(element => {
-            console.log(element)
             return (
-              <table>
+              <table key={element.firstLeg.fixtureID}>
                 <thead>
                   <tr>
                     <th class='table_team-name'></th>

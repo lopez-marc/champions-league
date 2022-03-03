@@ -10,18 +10,22 @@ import FinalStage from './pages/FinalStage'
 
 import Navbar from './components/Navbar'
 import RoundOf16 from './pages/RoundOf16'
+import { useState } from 'react'
 
 function App () {
+  const [route, setRoute] = useState('GroupStage')
   return (
     <BrowserRouter basename='/champions-league'>
       <UserContextProvider>
         <DataContextProvider>
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<GroupStage />} />
-            <Route path='/round-of-16' element={<RoundOf16 />} />
-            <Route path='/final-stage' element={<FinalStage />} />
-          </Routes>
+          <Navbar setRoute={setRoute} route={route} />
+          {route === 'GroupStage' ? (
+            <GroupStage />
+          ) : route === 'RoundOf16' ? (
+            <RoundOf16 />
+          ) : (
+            <GroupStage />
+          )}
         </DataContextProvider>
       </UserContextProvider>
     </BrowserRouter>

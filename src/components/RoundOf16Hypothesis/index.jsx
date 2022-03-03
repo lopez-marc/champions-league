@@ -74,7 +74,7 @@ export default function RoundOf16Hypothesis () {
 
       const updatedWinners = groupWinners.map(element => {
         if (
-          element.team.name === selectedPair.home.name ||
+          // element.team.name === selectedPair.home.name ||
           element.team.name === selectedPair.away.name
         ) {
           return {
@@ -89,8 +89,8 @@ export default function RoundOf16Hypothesis () {
 
       const updatedRunnersUp = groupRunnersUp.map(element => {
         if (
-          element.team.name === selectedPair.home.name ||
-          element.team.name === selectedPair.away.name
+          element.team.name === selectedPair.home.name
+          // || element.team.name === selectedPair.away.name
         ) {
           return {
             ...element,
@@ -138,13 +138,13 @@ export default function RoundOf16Hypothesis () {
     )
 
     deleteMatchLocalStorage('cl-hypothesis', newHypothesis)
-    console.log(newHypothesis)
+    // console.log(newHypothesis)
 
     const matchToClear = hypothesis.filter(
       element => element.home.name === event.currentTarget.dataset.reference
     )[0]
 
-    console.log(matchToClear)
+    // console.log(matchToClear)
 
     const updatedWinners = groupWinners.map(element => {
       if (element.team.name === matchToClear.away.name) {
@@ -183,6 +183,7 @@ export default function RoundOf16Hypothesis () {
               groupWinners.map(element => {
                 return (
                   <div
+                    key={element.team.name}
                     className={
                       element.inlist
                         ? 'team disabled'
@@ -221,6 +222,7 @@ export default function RoundOf16Hypothesis () {
               groupRunnersUp.map(element => {
                 return (
                   <div
+                    key={element.team.name}
                     className={
                       element.inlist
                         ? 'team disabled'
@@ -262,6 +264,7 @@ export default function RoundOf16Hypothesis () {
               hypothesis.map(element => {
                 return (
                   <table
+                    key={element.home.name}
                     data-reference={element.home.name}
                     onClick={e => clearMatch(e)}
                   >

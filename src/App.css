@@ -46,7 +46,7 @@
     margin-bottom: 0.5em;
   }
   #groupStagePage #groupStageMatches .buttons span {
-    margin: 0;
+    margin: 0 0.5em;
     padding: 0;
   }
   #groupStagePage #groupStageMatches .buttons span:hover {
@@ -82,6 +82,10 @@
     /* TODO solve this sub naviagtion  */
     display: none;
   }
+  #group-of-16-page #group-of-16 {
+    padding: 0.5em;
+  }
+
   #group-of-16-page #group-of-16-combinations {
     gap: 10px;
     /* width: 90vw; */
@@ -90,6 +94,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(8, 1fr);
   }
+  #group-of-16-page #group-of-16-combinations .team {
+    margin: 0.5em;
+  }
+
   #group-of-16-page #group-of-16-combinations #group-winners,
   #group-of-16-page #group-of-16-combinations #group-runners-up {
     display: grid;
@@ -104,6 +112,9 @@
   }
   #group-of-16-page #group-of-16-hypothesis table {
     grid-template-columns: 1fr;
+  }
+  #group-of-16-hypothesis table:hover {
+    background-color: white;
   }
   #group-of-16-page #group-of-16-hypothesis table .hypothesis-home {
     justify-content: flex-start;

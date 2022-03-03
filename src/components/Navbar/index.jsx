@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useUserContext } from '../../contexts/UserContext'
 
 import Login from '../Login'
@@ -14,7 +14,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import './styles.css'
 import PhoneNavbar from '../PhoneNavbar'
 
-export default function Navbar () {
+export default function Navbar ({ setRoute, route }) {
   const [showModal, setShowModal] = useState(false)
   const [isRegistered, setIsRegistered] = useState(true)
   const [showPhoneNavbar, setShowPhoneNavbar] = useState(false)
@@ -37,14 +37,23 @@ export default function Navbar () {
         <nav>
           <ul>
             <li>
-              <NavLink to='/'>Group Stage</NavLink>
+              <Link
+                to='#'
+                className={route === 'GroupStage' ? 'active' : null}
+                onClick={() => setRoute('GroupStage')}
+              >
+                Group Stage
+              </Link>
             </li>
             <li>
-              <NavLink to='/round-of-16'>Round of 16</NavLink>
+              <Link
+                to='#'
+                className={route === 'RoundOf16' ? 'active' : null}
+                onClick={() => setRoute('RoundOf16')}
+              >
+                Round of 16
+              </Link>
             </li>
-            {/* <li>
-              <NavLink to='/final-stage'>Final Stage</NavLink>
-            </li> */}
             {authenticated ? (
               <li>
                 <span id='navUserButton' onClick={logoutUser}>

@@ -63,9 +63,8 @@ export function DataContextProvider ({ children }) {
 
   useEffect(() => {
     if (finalStage) {
-      console.log(finalStage)
       const finalStageSortedByDate = finalStage.data.sort(
-        (a, b) => a.date > b.date
+        (a, b) => new Date(a.date) - new Date(b.date)
       )
 
       const finalStageFirstHalf = finalStageSortedByDate.slice(
@@ -84,6 +83,7 @@ export function DataContextProvider ({ children }) {
 
         return { firstLeg: element, secondLeg: secondLegElement }
       })
+
       setFinalStageTwoLegs(finalStagReordered)
     }
   }, [finalStage])

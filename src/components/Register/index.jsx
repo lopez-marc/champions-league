@@ -9,8 +9,8 @@ export default function Login ({ setIsRegistered, showModal, setShowModal }) {
 
   const handleGroupSubmit = event => {
     event.preventDefault()
-    console.log('email', email)
-    console.log('password', password)
+    // console.log('email', email)
+    // console.log('password', password)
 
     // const loginDetails = {
     //   email: email,

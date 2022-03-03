@@ -27,6 +27,7 @@ export default function RoundOf16Combinations () {
               groupWinners.map(element => {
                 return (
                   <div
+                    key={element.team.name}
                     className={
                       selectedTeam.name === element.team.name
                         ? 'team active'
@@ -60,6 +61,7 @@ export default function RoundOf16Combinations () {
               groupRunnersUp.map(element => {
                 return (
                   <div
+                    key={element.team.name}
                     className={
                       selectedTeam.name === element.team.name
                         ? 'team active'
