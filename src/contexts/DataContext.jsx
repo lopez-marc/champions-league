@@ -28,6 +28,7 @@ export function DataContextProvider ({ children }) {
     'cl-group-runners-up',
     []
   )
+  const [uniqueArrayOfDays, setUniqueArrayOfDays] = useState()
 
   const { token } = useUserContext()
 
@@ -47,15 +48,18 @@ export function DataContextProvider ({ children }) {
     ? [...new Set(standings.data.map(item => item.group).sort())]
     : null
 
-  const uniqueArrayOfDays = fixtures
-    ? [
+  useEffect(() => {
+    if (fixtures) {
+      const arrayOfDays = [
         ...new Set(
           fixtures.data
             .filter(item => item.round.includes(matchDay))
             .map(item => item.day)
         )
       ]
-    : null
+      setUniqueArrayOfDays(arrayOfDays)
+    }
+  }, [fixtures, matchDay])
 
   useEffect(() => {
     if (finalStage) {

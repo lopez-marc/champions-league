@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import putFixture from '../../services/putFixture'
-// import resetFixture from '../../services/resetFixture'
+import resetFixture from '../../services/resetFixture'
 import getStandings from '../../services/getStandings.jsx'
 import getFixtures from '../../services/getFixtures.jsx'
 import { useUserContext } from '../../contexts/UserContext'
@@ -73,17 +73,33 @@ export default function Match ({ match }) {
   const handleUpdate = event => {
     event.preventDefault()
     // console.log(event)
-    const jsonUpdatedMatch = JSON.stringify(thisMatch)
-    putFixture(match.fixtureID, jsonUpdatedMatch, token)
-    getFixtures(token).then(setFixtures)
-    getStandings(token).then(setStandings)
-    setIsHidden(true)
+    // console.log(token)
+    if (!token) {
+      // const jsonUpdatedMatch = JSON.stringify(thisMatch)
+      // putFixture(match.fixtureID, jsonUpdatedMatch, token)
+      // getFixtures(token).then(setFixtures)
+      // getStandings(token).then(setStandings)
+      setIsHidden(true)
+    } else if (token) {
+      const jsonUpdatedMatch = JSON.stringify(thisMatch)
+      putFixture(match.fixtureID, jsonUpdatedMatch, token)
+      getFixtures(token).then(setFixtures)
+      getStandings(token).then(setStandings)
+      setIsHidden(true)
+    }
   }
   const handleReset = event => {
     event.preventDefault()
-    // resetFixture(match.fixtureID).then()
-    getFixtures().then(setFixtures)
-    setIsHidden(true)
+    if (!token) {
+      setIsHidden(true)
+    } else if (token) {
+      // console.log(token)
+      // console.log(match.fixtureID)
+      resetFixture(match.fixtureID, token).then(fixture => console.log(fixture))
+      // TODO handle the returned fixture
+      // getFixtures(token).then(setFixtures)
+      setIsHidden(true)
+    }
   }
 
   return (
