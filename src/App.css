@@ -103,4 +103,31 @@
   #group-of-16-page #group-of-16-hypothesis table .hypothesis-home img {
     order: -1;
   }
+
+  #phoneMainNavigation {
+    background-color: #398ab9;
+    display: flex;
+    padding: 0.2em;
+  }
+  #phoneMainNavigation nav {
+    width: 100%;
+  }
+  #phoneMainNavigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  #phoneMainNavigation a {
+    background-color: #fff;
+    border-radius: 0.5em;
+    color: #1c658c;
+    padding: 0.5em;
+    text-decoration: none;
+  }
+  #phoneMainNavigation a.active {
+    background-color: #1c658c;
+    box-shadow: 0 3px 8px hsla(0, 0%, 100%, 0.24);
+    color: #eee;
+    pointer-events: none;
+  }
 }
