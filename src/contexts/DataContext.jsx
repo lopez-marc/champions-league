@@ -90,34 +90,41 @@ export function DataContextProvider ({ children }) {
         .filter(item => item.rank === 1)
         .sort((a, b) => a.group > b.group)
 
-      const sameWinners = winners.filter(winner => {
-        groupWinners.map(groupWinner => {
-          if (winner.team.name === groupWinner.team.name) {
-            return true
-          }
-          return false
-        })
-      })
-
-      if (sameWinners.length !== 0) {
+      if (groupWinners.length === 0) {
         setGroupWinners(winners)
+      } else {
+        const sameWinners = winners.filter(winner => {
+          return groupWinners.map(groupWinner => {
+            if (winner.team.name === groupWinner.team.name) {
+              return true
+            }
+            return false
+          })
+        })
+
+        if (sameWinners.length !== 8) {
+          setGroupWinners(winners)
+        }
       }
 
       const runners = standings.data
         .filter(item => item.rank === 2)
         .sort((a, b) => a.group > b.group)
 
-      const sameRunners = runners.filter(runner => {
-        groupRunnersUp.map(groupRunner => {
-          if (runner.team.name === groupRunner.team.name) {
-            return true
-          }
-          return false
-        })
-      })
-
-      if (sameRunners.length !== 0) {
+      if (groupRunnersUp.length === 0) {
         setGroupRunnersUp(runners)
+      } else {
+        const sameRunners = runners.filter(runner => {
+          return groupRunnersUp.map(groupRunner => {
+            if (runner.team.name === groupRunner.team.name) {
+              return true
+            }
+            return false
+          })
+        })
+        if (sameRunners.length !== 8) {
+          setGroupRunnersUp(runners)
+        }
       }
     }
   }, [standings])
