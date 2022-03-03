@@ -20,7 +20,6 @@
     margin: 0;
   }
   #groupStagePage #groupStageMatches form {
-    flex-direction: row;
     justify-content: flex-start;
   }
   #groupStagePage #groupStageMatches .match {
@@ -46,6 +45,15 @@
     justify-content: flex-start;
     margin-bottom: 0.5em;
   }
+  #groupStagePage #groupStageMatches .buttons span {
+    margin: 0;
+    padding: 0;
+  }
+  #groupStagePage #groupStageMatches .buttons span:hover {
+    box-shadow: none;
+    background-color: white;
+  }
+
   #groupStagePage #groupStageStandings {
     width: 90vw;
     margin: 0;
