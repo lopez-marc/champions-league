@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const putFixture = async (id, data, token) => {
   const res = await axios.put(
-    `${process.env.REACT_APP_BACKEND}/fixture/${id}`,
+    `${process.env.APIURL}/fixture/${id}`,
     { data: JSON.parse(data) },
     {
       headers: {

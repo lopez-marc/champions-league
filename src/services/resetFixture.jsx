@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const resetFixture = async (id, token) => {
   const res = await axios.put(
-    `${process.env.REACT_APP_BACKEND}/fixture/reset/${id}`,
+    `${process.env.APIURL}/fixture/reset/${id}`,
     {},
     {
       headers: {

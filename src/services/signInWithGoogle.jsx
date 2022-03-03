@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const signInWithGoogle = async token => {
-  const res = await axios.get(`${process.env.REACT_APP_BACKEND}/login`, {
+  const res = await axios.get(`${process.env.APIURL}/login`, {
     headers: {
       Authorization: 'Bearer ' + token
     }
