@@ -1,6 +1,4 @@
 @media only screen and (max-width: 600px) {
-  #mainNavigation img {
-  }
   #mainNavigation nav li {
     display: none;
   }
@@ -70,5 +68,39 @@
   }
   #groupStagePAge input[type='number'] {
     height: 20px;
+  }
+
+  header#roundOf16Navigation {
+    /* TODO solve this sub naviagtion  */
+    display: none;
+  }
+  #group-of-16-page #group-of-16-combinations {
+    gap: 10px;
+    /* width: 90vw; */
+  }
+  #group-of-16-page #group-of-16-combinations .team-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+  #group-of-16-page #group-of-16-combinations #group-winners,
+  #group-of-16-page #group-of-16-combinations #group-runners-up {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #group-of-16-page #group-of-16-combinations h3 {
+    font-size: small;
+    height: 20px;
+  }
+  #group-of-16-page #group-of-16-hypothesis {
+    grid-template-columns: 1fr;
+  }
+  #group-of-16-page #group-of-16-hypothesis table {
+    grid-template-columns: 1fr;
+  }
+  #group-of-16-page #group-of-16-hypothesis table .hypothesis-home {
+    justify-content: flex-start;
+  }
+  #group-of-16-page #group-of-16-hypothesis table .hypothesis-home img {
+    order: -1;
   }
 }

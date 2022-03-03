@@ -14,14 +14,9 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import './styles.css'
 
 export default function PhoneNavbar () {
-  const [showModal, setShowModal] = useState(false)
   const [isRegistered, setIsRegistered] = useState(true)
 
   const { authenticated, loginWithGoogle, logoutUser } = useUserContext()
-
-  // const toggleModal = () => {
-  //   setShowModal(!showModal)
-  // }
 
   const handleGoogle = () => {
     loginWithGoogle()
@@ -29,9 +24,7 @@ export default function PhoneNavbar () {
 
   return (
     <>
-      <header id='mainNavigation'>
-        <img id='NavLogo' src={NavLogo} alt='' />
-
+      <header id='phoneMainNavigation'>
         <nav>
           <ul>
             <li>
@@ -43,7 +36,7 @@ export default function PhoneNavbar () {
             {/* <li>
               <NavLink to='/final-stage'>Final Stage</NavLink>
             </li> */}
-            {authenticated ? (
+            {/* {authenticated ? (
               <li>
                 <span id='navUserButton' onClick={logoutUser}>
                   <FontAwesomeIcon icon={faCircleUser} />
@@ -57,30 +50,10 @@ export default function PhoneNavbar () {
                   Login with Google
                 </span>
               </li>
-            )}
-            <li className='label-small'>
-              <FontAwesomeIcon icon={faBars} size='2x' />
-            </li>
+            )} */}
           </ul>
         </nav>
       </header>
-      {showModal ? (
-        <Modal>
-          {isRegistered ? (
-            <Login
-              setIsRegistered={setIsRegistered}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          ) : (
-            <Register
-              setIsRegistered={setIsRegistered}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          )}
-        </Modal>
-      ) : null}
     </>
   )
 }

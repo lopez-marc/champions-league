@@ -12,10 +12,12 @@ import { faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 import './styles.css'
+import PhoneNavbar from '../PhoneNavbar'
 
 export default function Navbar () {
   const [showModal, setShowModal] = useState(false)
   const [isRegistered, setIsRegistered] = useState(true)
+  const [showPhoneNavbar, setShowPhoneNavbar] = useState(false)
 
   const { authenticated, loginWithGoogle, logoutUser } = useUserContext()
 
@@ -59,11 +61,16 @@ export default function Navbar () {
               </li>
             )}
             <li className='label-small'>
-              <FontAwesomeIcon icon={faBars} size='2x' />
+              <FontAwesomeIcon
+                icon={faBars}
+                size='2x'
+                onClick={() => setShowPhoneNavbar(!showPhoneNavbar)}
+              />
             </li>
           </ul>
         </nav>
       </header>
+      {showPhoneNavbar ? <PhoneNavbar /> : null}
       {showModal ? (
         <Modal>
           {isRegistered ? (

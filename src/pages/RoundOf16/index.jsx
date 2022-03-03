@@ -14,16 +14,18 @@ export default function RoundOf16 () {
         showHypothesis={showHypothesis}
         setShowHypothesis={setShowHypothesis}
       />
-      <div id='group-of-16'>
-        {/* <h2>Clubs in the draw Stage</h2> */}
-        {showHypothesis ? (
-          <RoundOf16Hypothesis />
-        ) : (
-          <>
-            <RoundOf16Fixtures />
-            <RoundOf16Combinations />
-          </>
-        )}
+      <div id='group-of-16-page'>
+        <div id='group-of-16'>
+          {/* <h2>Clubs in the draw Stage</h2> */}
+          {showHypothesis ? (
+            <RoundOf16Hypothesis />
+          ) : (
+            <>
+              <RoundOf16Fixtures />
+              <RoundOf16Combinations />
+            </>
+          )}
+        </div>
       </div>
     </>
   )

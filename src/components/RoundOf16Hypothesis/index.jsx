@@ -267,27 +267,22 @@ export default function RoundOf16Hypothesis () {
                   >
                     <tr className='hypothesis-home'>
                       <td className='team-name'>
-                        <span>
-                          {element.home.name}
-
-                          <img
-                            src={`https://media.api-sports.io/football/teams/${element.home.id}.png`}
-                            alt={element.home.name}
-                            className='crest'
-                          />
-                        </span>
+                        <span>{element.home.name}</span>
+                        <img
+                          src={`https://media.api-sports.io/football/teams/${element.home.id}.png`}
+                          alt={element.home.name}
+                          className='crest'
+                        />
                       </td>
                     </tr>
                     <tr className='hypothesis-away'>
                       <td className='team-name'>
-                        <span>
-                          <img
-                            src={`https://media.api-sports.io/football/teams/${element.away.id}.png`}
-                            alt={element.away.name}
-                            className='crest'
-                          />
-                          {element.away.name}
-                        </span>
+                        <img
+                          src={`https://media.api-sports.io/football/teams/${element.away.id}.png`}
+                          alt={element.away.name}
+                          className='crest'
+                        />
+                        <span>{element.away.name}</span>
                       </td>
                     </tr>
                   </table>
