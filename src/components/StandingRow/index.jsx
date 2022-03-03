@@ -17,9 +17,9 @@ export default function StandingRow ({ team }) {
       <td>{team.games.win}</td>
       <td>{team.games.draw}</td>
       <td>{team.games.lose}</td>
-      <td>{team.goals.for}</td>
-      <td>{team.goals.against}</td>
-      <td>{team.goals.difference}</td>
+      <td className='label-big'>{team.goals.for}</td>
+      <td className='label-big'>{team.goals.against}</td>
+      <td className='label-big'>{team.goals.difference}</td>
       <td>
         <strong>{team.points}</strong>
       </td>

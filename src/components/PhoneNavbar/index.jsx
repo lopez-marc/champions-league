@@ -13,7 +13,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 import './styles.css'
 
-export default function Navbar () {
+export default function PhoneNavbar () {
   const [showModal, setShowModal] = useState(false)
   const [isRegistered, setIsRegistered] = useState(true)
 

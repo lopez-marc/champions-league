@@ -15,31 +15,31 @@ export default function Standing ({ group }) {
           <tr>
             <th class='table_team-name'></th>
             <th class='table_team-played'>
-              <span class='label--big'>Played</span>
-              {/* <span class='label--small'>P</span> */}
+              <span class='label-big'>Played</span>
+              <span class='label-small'>P</span>
             </th>
             <th class='table_team-won'>
-              <span class='label--big'>Won</span>
-              {/* <span class='label--small'>W</span> */}
+              <span class='label-big'>Won</span>
+              <span class='label-small'>W</span>
             </th>
             <th class='table_team-drawn'>
-              <span class='label--big'>Draws</span>
-              {/* <span class='label--small'>D</span> */}
+              <span class='label-big'>Draws</span>
+              <span class='label-small'>D</span>
             </th>
             <th class='table_team-lost'>
-              <span class='label--big'>Lost</span>
-              {/* <span class='label--small'>L</span> */}
+              <span class='label-big'>Lost</span>
+              <span class='label-small'>L</span>
             </th>
-            <th class='table_team-for'>
-              <span class='label--big'>For</span>
+            <th class='table_team-for label-big'>
+              <span>For</span>
             </th>
-            <th class='table_team-against'>
-              <span class='label--big'>Against</span>
+            <th class='table_team-against label-big'>
+              <span>Against</span>
             </th>
-            <th class='table_team-goal-diff'>Difference</th>
+            <th class='table_team-goal-diff label-big'>Difference</th>
             <th class='table_team-points'>
-              <span class='label--big'>Points</span>
-              {/* <span class='label--small'>Pts</span> */}
+              <span class='label-big'>Points</span>
+              <span class='label-small'>Pts</span>
             </th>
           </tr>
         </thead>

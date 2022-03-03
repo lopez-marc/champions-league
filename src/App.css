@@ -1,0 +1,74 @@
+@media only screen and (max-width: 600px) {
+  #mainNavigation img {
+  }
+  #mainNavigation nav li {
+    display: none;
+  }
+  #mainNavigation nav .label-small {
+    display: flex;
+    margin-left: auto;
+
+    color: white;
+  }
+  #mainNavigation nav .label-small svg {
+    margin-right: 0;
+  }
+
+  #groupStagePage #groupStage {
+    grid-template-columns: 1fr;
+  }
+  #groupStagePage #groupStageMatches {
+    width: 90vw;
+    margin: 0;
+  }
+  #groupStagePage #groupStageMatches form {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #groupStagePage #groupStageMatches .match {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #groupStagePage #groupStageMatches .dash {
+    display: none;
+  }
+  #groupStagePage #groupStageMatches .match .home img {
+    order: -1;
+  }
+  #groupStagePage #groupStageMatches .match .home input {
+    margin-left: auto;
+  }
+
+  #groupStagePage #groupStageMatches .match .away input {
+    order: 3;
+    margin-left: auto;
+  }
+  #groupStagePage #groupStageMatches .match .home {
+    justify-content: flex-start;
+    margin-bottom: 0.5em;
+  }
+  #groupStagePage #groupStageStandings {
+    width: 90vw;
+    margin: 0;
+  }
+  #groupStagePage .standing h3 {
+    width: 85vw;
+    margin: 0.5em 0;
+  }
+  #groupStagePage .label-big {
+    display: none;
+  }
+  #groupStagePage .label-small {
+    display: block;
+  }
+
+  #groupStagePage .standing table {
+    grid-template-columns:
+      minmax(130px, 3fr) minmax(20px, 1fr) minmax(20px, 1fr) minmax(20px, 1fr)
+      minmax(20px, 1fr) minmax(20px, 1fr);
+  }
+  #groupStagePAge input[type='number'] {
+    height: 20px;
+  }
+}

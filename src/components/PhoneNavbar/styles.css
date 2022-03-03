@@ -1,0 +1,40 @@
+#mainNavigation {
+  padding: 1em;
+  background-color: #1c658c;
+  display: flex;
+}
+#mainNavigation nav {
+  width: 100%;
+}
+#mainNavigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+}
+#mainNavigation a {
+  text-decoration: none;
+  background-color: white;
+  padding: 1em;
+  color: #1c658c;
+  border-radius: 0.5em;
+}
+#mainNavigation a.active {
+  background-color: #398ab9;
+  color: white;
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+}
+#mainNavigation svg {
+  margin-right: 1em;
+}
+
+#navUserButton {
+  background-color: white;
+  padding: 1em;
+  color: #1c658c;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+#navUserButton svg {
+  margin-right: 1em;
+}
